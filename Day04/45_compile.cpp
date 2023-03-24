@@ -10,23 +10,38 @@ private:
 	// 멤버함수(=메소드):기능
 
 public:
-	void set(const char* myId, int myAge, const char* myName) {
-		id = myId;
-		age = myAge;
-		name = myName;
-	}
-	void get() {
+	Myclass(const char* myId, int myAge, const char* myName);
+
+	//void set(const char* myId, int myAge, const char* myName) {		// 멤버함수(메소드)
+	//	id = myId;
+	//	age = myAge;
+	//	name = myName;
+	//}
+
+	void getData() {
 		cout << "id : " << id << endl;
 		cout << "age : " << age << endl;
 		cout << "name : " << name << endl;
 	}
 };
 
+Myclass::Myclass(const char* myId, int myAge, const char* myName) : id(myId), age(myAge), name("가위") {
+	getData();
+	cout << "생성자 호출" << endl;
+	id = myId;
+	age = myAge;
+	name = myName;
+};
+
+
 int main()
 {
-	Myclass o;
-	o.set("201712646", 26, "이동훈");
-	o.get();
+	//Myclass o;	// 객체 생성
+	//o.set("201712646", 26, "이동훈");
+	//o.get();
+
+	Myclass mc("201712646", 26, "이동훈");		// 생성자에 전달
+	mc.getData();
 
 	return 0;
 }
