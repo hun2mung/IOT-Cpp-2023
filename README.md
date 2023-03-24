@@ -2,4 +2,4 @@
  
 [Day 1,2,3](https://github.com/hun2mung/IOT-Cpp-2023/tree/main/Day1%2C2%2C3)
 
-[Day04}(https://github.com/hun2mung/IOT-Cpp-2023/tree/main/Day04)
+[Day04](https://github.com/hun2mung/IOT-Cpp-2023/tree/main/Day04)
