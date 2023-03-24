@@ -6,7 +6,7 @@ class Myclass {
 private:
 	const char* id;
 	int age;
-	const char* name;
+	char* name;
 	// 멤버함수(=메소드):기능
 
 public:
@@ -28,9 +28,12 @@ public:
 Myclass::Myclass(const char* myId, int myAge, const char* myName) : id(myId), age(myAge), name("가위") {
 	getData();
 	cout << "생성자 호출" << endl;
+	int len = strlen(myName) + 1;
+	name = new char[len];
+
 	id = myId;
 	age = myAge;
-	name = myName;
+	strcpy(name, myName);
 };
 
 
