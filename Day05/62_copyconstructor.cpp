@@ -3,21 +3,37 @@ using namespace std;
 
 class Myclass {
 	int num;
+	char* name;
 public:
-	Myclass(int n) : num(n) {};
+	Myclass(int n, const char* name) : num(n) {
+		cout << "생성자 호출" << endl;
+		this->name = new char[strlen(name) + 1];
+		strcpy(this->name, name);
+	}
+	explicit Myclass(const Myclass& other) : num(other.num){		// 깊은 복수
+		cout << "복사생성자 호출" << endl;
+		//this->name = other.name;
+		this->name = new char[strlen(other.name) + 1];
+		strcpy(this->name, other.name);
+		this->num = other.num;
+	}
 	void getData() {
-		cout << num << endl;
+		cout << num << "," << name << endl;
+	}
+	~Myclass() {
+		cout << "메모리해제" << endl;
+		delete[] this->name;
 	}
 };
 
 int main() {
-	Myclass m1(10);			
-	Myclass m2 = m1;		// m1 객체를 복사해서 m2 객체 생성.(복사생성자 호출)
-	Myclass m3(m2);			//복사 생성자 호출 / 복사생성자의 매개변수는 참조형
-	
+	Myclass m1(1,"홍길동");
 	m1.getData();
-	m2.getData();
+	//Myclass m2 = m1;		// m1 객체를 복사해서 m2 객체 생성.(복사생성자 호출) -> 이러한 형태는 묵시적 변환
+	//m2.getData();
+	Myclass m3(m1);			//복사 생성자 호출 / 복사생성자의 매개변수는 참조형
 	m3.getData();
+	
 
 	return 0;
 }
