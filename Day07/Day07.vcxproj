@@ -142,7 +142,10 @@
     <ClCompile Include="05_Function.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="06_Virtual_EmployeeManager.cpp" />
+    <ClCompile Include="06_Virtual_EmployeeManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="07_Polymorphism.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
